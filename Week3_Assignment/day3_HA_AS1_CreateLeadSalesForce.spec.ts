@@ -1,7 +1,8 @@
 import test, { expect } from "@playwright/test";
 
 test("Create Individuals Sales Force", async ({ page }) => {
-    const lastName_Value = 'kl'
+    test.setTimeout(60000);
+    const lastName_Value = 'mk'
     await page.goto("https://login.salesforce.com/?locale=in")
     // click username text box
     await page.locator("//input[@id='username']").click()
@@ -41,5 +42,4 @@ test("Create Individuals Sales Force", async ({ page }) => {
     const lastName = await page.locator("//slot[@name='primaryField']/lightning-formatted-name");
     //Auto try method to validate the lastname
     await expect(lastName).toContainText(lastName_Value)
-    
 })

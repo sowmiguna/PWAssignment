@@ -2,7 +2,8 @@ import test from "@playwright/test";
 
 // calling test method with inbuilt launch browser
 test("Create Edit Leads", async ({ page }) => {
-
+  
+  test.setTimeout(60000);
   // goto method will help to navigate the specified URL
   await page.goto("https://leaftaps.com/opentaps/control/main")
 

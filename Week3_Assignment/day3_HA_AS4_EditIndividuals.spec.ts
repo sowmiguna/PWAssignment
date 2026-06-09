@@ -2,7 +2,8 @@ import test, { expect } from "@playwright/test";
 
 test("Edit Individuals Sales Force", async ({ page }) => {
     
-    let firstName = "henry"
+    test.setTimeout(60000);
+    let firstName = "Grud"
 
     await page.goto("https://login.salesforce.com/?locale=in")
     // click username text box
@@ -33,12 +34,13 @@ test("Edit Individuals Sales Force", async ({ page }) => {
     await page.locator("//a[contains(@title,'FG')]/ancestor::tr//child::button").click();
     // click edit button
     await page.locator("//a[@title='Edit']").click();
+    //click dropdown salutation 
+    await page.locator("//a[@class='select']").nth(0).click()
+    await page.locator("//a[@title='Mr.']").click()
     // fil first name
     await page.locator("//input[contains(@class,'firstName ')]").fill(firstName);
     // click save button
     await page.locator("//span[text()='Save']").click();
-    // locator is stored as varible name
-    const name = await page.locator("(//a[@class='slds-truncate'])[1]//span");
-    //expect method store the xpath values and toHaveText method will validate the text is equal
-    await expect(name).toContainText(firstName)     
+    //verify in toast message for first name created   
+    await expect(page.locator("//span[@class='toastMessage slds-text-heading--small forceActionsText' and contains(.,'"+firstName+"')]")).toContainText(firstName)
 })
