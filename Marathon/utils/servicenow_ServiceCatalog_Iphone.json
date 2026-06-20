@@ -1,0 +1,11 @@
+[
+    {
+        "TC_No": "TC_001",
+        "iphoneModel": "Apple iPhone 13 pro",
+        "brokenOption": "Yes",
+        "originalPhNo": "99",
+        "monthlyData": "unlimited",
+        "color": "Sierra Blue",
+        "storage": "512"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "TC_No": "TC_001_Login using Dilip Cred",
+        "userName":"dilip@testleaf.com",
+        "password":"Leaf@123"
+    },
+    {
+        "TC_No": "TC_002_Login using DilipKumar Cred",
+        "userName":"dilipkumar.rajendran@testleaf.com",
+        "password":"TestLeaf@2025"
+    }
+]
